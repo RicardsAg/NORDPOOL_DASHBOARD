@@ -85,16 +85,15 @@ def main() -> None:
 
     today = datetime.now(timezone.utc).date()
 
-   # delivery_dates = [
-    #    today,
-    #    today + timedelta(days=1),
-    #]
-    delivery_dates = pd.date_range(start = '2026-06-01', end = '2026-08-13').to_list()
+    delivery_dates = [
+        today,
+        today + timedelta(days=1),
+    ]
 
     total_added = 0
 
     for delivery_date in delivery_dates:
-        delivery_date_str = delivery_date.date().isoformat()
+        delivery_date_str = delivery_date.strftime('%Y-%m-%d')
 
         try:
             raw = fetch_day_ahead_prices(delivery_date_str)
