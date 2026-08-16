@@ -2,10 +2,7 @@ name: Daily Nord Pool Fetch
 
 on:
   schedule:
-    # 15:00 UTC daily -- safely after Nord Pool's ~11:00-12:00 UTC publish
-    # window in both winter (CET) and summer (CEST). Cron here is ALWAYS
-    # UTC; GitHub Actions has no DST awareness.
-    - cron: '0 15 * * *'
+    - cron: '0 13 * * *'
   workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab, e.g. for backfills
 
 permissions:
